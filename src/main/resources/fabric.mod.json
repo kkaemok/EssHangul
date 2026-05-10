@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "id": "esshangul",
+  "version": "${version}",
+  "name": "EssHangul",
+  "description": "Korean chat for Essential",
+  "authors": [
+    "kkaemok"
+  ],
+  "contact": {},
+  "license": "All-Rights-Reserved",
+  "icon": "assets/esshangul/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "fabric-datagen": [
+      "org.kkaemok.esshangul.client.EsshangulDataGenerator"
+    ],
+    "client": [
+      "org.kkaemok.esshangul.client.EsshangulClient"
+    ],
+    "modmenu": [
+      "org.kkaemok.esshangul.client.EsshangulModMenu"
+    ],
+    "main": [
+      "org.kkaemok.esshangul.Esshangul"
+    ]
+  },
+  "mixins": [
+    "esshangul.mixins.json",
+    {
+      "config": "esshangul.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric-api": "*",
+    "minecraft": "${minecraft_version}",
+    "essential-container": "*"
+  },
+  "suggests": {
+    "modmenu": "*"
+  }
+}
